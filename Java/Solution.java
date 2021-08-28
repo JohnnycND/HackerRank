@@ -6,21 +6,23 @@ import java.util.regex.*;
 
 public class Solution {
 
-static{
-    public static boolean flag = false;
-    Scanner lec = new Scanner(System.in);
-    
-    byte B = lec.nextByte();
-    byte H = lec.nextByte();
+static Scanner input = new Scanner(System.in);
+static boolean flag = true;
+static int B = input.nextInt();
+static int H = input.nextInt();
 
-    if(B > 0 && H > 0){
-        int area = B * H;
-        flag = true;
-    }else{
-        System.out.println("java.lang.Exception: Breadth and height must be positive");
+static{
+    try{
+        if(B <= 0 || H <= 0){
+            flag = false;
+            throw new Exception("Breadth and height must be positive");
+        }
+    }catch(Exception e){
+        System.out.println(e);
     }
-    
+
 }
+
 
 
 
